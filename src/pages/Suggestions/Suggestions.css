@@ -1,0 +1,50 @@
+.suggestions-container {
+  text-align: center;
+  padding: 20px;
+  max-width: 500px;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid var(--color-accent-2);
+  border-radius: var(--border-radius-m);
+  box-shadow: 0px 4px 20px var(--color-accent-1);
+}
+
+.suggestions-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+  padding: var(--spacing-m);
+}
+
+.suggestions-form label {
+  font-size: var(--font-size-md);
+  color: var(--color-light);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.suggestions-form input,
+.suggestions-form textarea {
+  padding: var(--spacing-s);
+  font-size: var(--font-size-md);
+  border: 1px solid var(--color-accent-2);
+  border-radius: var(--border-radius-s);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-light);
+}
+
+.suggestions-form button {
+  padding: var(--spacing-s);
+  font-size: var(--font-size-md);
+  background-color: var(--color-accent-1);
+  color: var(--color-light);
+  border: none;
+  border-radius: var(--border-radius-m);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.suggestions-form button:hover {
+  background-color: var(--color-accent-3);
+}

@@ -1,0 +1,21 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ocupa toda la pantalla */
+}
+
+header {
+  width: 100%;
+  background-color: var(--color-accent-1);
+  padding: var(--spacing-m);
+  text-align: center;
+  box-shadow: 0px 4px 10px var(--color-accent-1);
+}
+
+header h1 {
+  color: var(--color-light);
+  text-transform: uppercase;
+  text-shadow: var(--neon-glow);
+  font-size: var(--font-size-xl);
+}
+

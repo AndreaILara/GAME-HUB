@@ -1,0 +1,57 @@
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh; /* Mantiene todo dentro del viewport */
+  width: 100vw;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  overflow: hidden; /* Evita scroll innecesario */
+  position: relative; /* Asegura que el contenido se ajuste */
+}
+
+.game-title {
+  font-size: 2rem;
+  font-family: "Press Start 2P", cursive;
+  text-transform: uppercase;
+  color: var(--color-light);
+  text-shadow: 0 0 8px var(--color-accent-1), 0 0 16px var(--color-accent-2);
+  margin: 0;
+  padding: 10px 20px;
+  border-radius: var(--border-radius-m);
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid var(--color-accent-3);
+  box-shadow: 0 0 10px var(--color-accent-2);
+  animation: neon-glow 1.5s infinite alternate;
+  position: absolute;
+  top: 80px; /* Asegura que no se solape con el navbar */
+}
+
+.game-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1; /* Ocupa todo el espacio restante */
+  width: 100%;
+  height: calc(100vh - 100px); /* Ajuste para que no sobrepase el viewport */
+}
+
+@keyframes neon-glow {
+  from {
+    text-shadow: 0 0 8px var(--color-accent-1), 0 0 16px var(--color-accent-2);
+  }
+  to {
+    text-shadow: 0 0 16px var(--color-accent-3), 0 0 24px var(--color-accent-4);
+  }
+}
+
+/* Ajuste global */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Evita la barra de scroll */
+}

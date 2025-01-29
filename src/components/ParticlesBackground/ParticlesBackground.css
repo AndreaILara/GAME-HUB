@@ -1,0 +1,10 @@
+/* 🎇 CONTENEDOR DE LAS PARTÍCULAS */
+.particles-container {
+  position: fixed; /* Para que cubra toda la pantalla */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* Evita que interfiera con la interacción */
+  z-index: 0; /* Debe estar por debajo de los elementos pero sobre el fondo */
+}

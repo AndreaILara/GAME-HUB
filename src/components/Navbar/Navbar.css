@@ -1,0 +1,59 @@
+.navbar {
+  width: 100%;
+  padding: var(--spacing-s) var(--spacing-l);
+  background-color: var(--color-accent-1);
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+}
+
+.navbar li {
+  display: flex;
+  align-items: center;
+  margin: 0 var(--spacing-s);
+}
+
+/* ✨ Efecto de animación para los iconos del navbar */
+.navbar-icon {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+}
+
+/* 💡 Efecto de escala y brillo al pasar el mouse */
+.navbar-icon:hover {
+  transform: scale(1.2) rotate(10deg);
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 1));
+}
+
+/* 💥 Efecto de pulsación al hacer clic */
+.navbar-icon:active {
+  transform: scale(0.9);
+  filter: drop-shadow(0 0 25px rgba(255, 255, 255, 1));
+}
+
+/* 🎨 Animación de color en los enlaces */
+.navbar a {
+  display: flex;
+  align-items: center;
+  color: var(--color-light);
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: var(--color-accent-3);
+}

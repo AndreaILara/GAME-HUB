@@ -1,0 +1,28 @@
+.favorites-page {
+  text-align: center;
+  padding: var(--spacing-l);
+}
+
+.favorites-page h1 {
+  font-size: var(--font-size-xl);
+  color: var(--color-light);
+  text-shadow: var(--neon-glow);
+  margin-bottom: var(--spacing-m);
+}
+
+/* 📌 Contenedor de juegos favoritos */
+.favorites-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-m);
+  max-width: 90vw;
+  margin: 0 auto;
+}
+
+/* 📌 Mensaje cuando no hay favoritos */
+.favorites-page p {
+  font-size: var(--font-size-md);
+  color: var(--color-accent-2);
+  text-shadow: 0px 0px 5px var(--color-accent-2);
+}

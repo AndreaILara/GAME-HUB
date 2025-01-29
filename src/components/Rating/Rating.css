@@ -1,0 +1,48 @@
+.rating-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.rating {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Espaciado entre corazones */
+}
+
+.heart-icon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.3s, filter 0.5s ease;
+  filter: drop-shadow(0 0 4px rgba(255, 0, 127, 0.5));
+}
+
+.heart-icon.filled {
+  transform: scale(1.2); /* Aumenta el tamaño cuando está seleccionado */
+  filter: drop-shadow(0 0 20px rgba(255, 0, 127, 1)); /* Efecto de brillo */
+}
+
+.heart-icon:hover {
+  transform: scale(1.3);
+  filter: drop-shadow(0 0 30px rgba(255, 0, 127, 1));
+}
+
+/* 💖 MENSAJE DE AGRADECIMIENTO */
+.thanks-message {
+  font-size: var(--font-size-md);
+  color: var(--color-accent-2);
+  text-shadow: 0px 0px 5px var(--color-accent-2);
+  animation: fadeInOut 3s ease-in-out;
+}
+
+/* ✨ Animación de aparición */
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
