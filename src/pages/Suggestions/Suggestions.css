@@ -1,12 +1,13 @@
 .suggestions-container {
   text-align: center;
-  padding: 20px;
-  max-width: 500px;
-  margin: auto;
+  padding: var(--spacing-m);
+  max-width: 500px; /* 🔹 Reducido para que no sea tan ancho */
+  margin: 10vh auto; /* 🔹 Centrado con más espacio arriba */
   background: rgba(0, 0, 0, 0.8);
   border: 2px solid var(--color-accent-2);
   border-radius: var(--border-radius-m);
   box-shadow: 0px 4px 20px var(--color-accent-1);
+  width: 85%; /* 🔹 Reducido para dispositivos pequeños */
 }
 
 .suggestions-form {
@@ -32,6 +33,13 @@
   border-radius: var(--border-radius-s);
   background-color: rgba(255, 255, 255, 0.1);
   color: var(--color-light);
+  width: 100%;
+  max-width: 100%;
+}
+
+.suggestions-form textarea {
+  min-height: 100px;
+  resize: vertical;
 }
 
 .suggestions-form button {
@@ -47,4 +55,48 @@
 
 .suggestions-form button:hover {
   background-color: var(--color-accent-3);
+}
+
+/* 🔥 Responsive design */
+@media (max-width: 768px) {
+  .suggestions-container {
+    max-width: 90%; /* 🔹 Menos ancho en pantallas medianas */
+    margin: 8vh auto; /* 🔹 Espaciado proporcional */
+    padding: var(--spacing-s);
+  }
+  .suggestions-form {
+    gap: var(--spacing-s);
+  }
+
+  .suggestions-form input,
+  .suggestions-form textarea {
+    font-size: var(--font-size-sm);
+  }
+
+  .suggestions-form button {
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .suggestions-container {
+    width: 95%; /* 🔹 Se ajusta en móviles */
+    max-width: 400px; /* 🔹 Un poco más estrecho */
+    margin: 5vh auto; /* 🔹 Espaciado proporcional */
+    padding: var(--spacing-xs);
+    border-radius: var(--border-radius-s);
+  }
+  .suggestions-form label {
+    font-size: var(--font-size-sm);
+  }
+
+  .suggestions-form input,
+  .suggestions-form textarea {
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-xs);
+  }
+
+  .suggestions-form button {
+    font-size: var(--font-size-xs);
+  }
 }

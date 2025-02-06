@@ -1,13 +1,14 @@
 .footer {
-  width: 100%;
+  width: 100vw;
   padding: var(--spacing-m);
   background-color: var(--color-footer-bg);
   color: var(--color-light);
   text-align: center;
   box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.1);
-  position: absolute;
+  position: relative; /* 🔹 Ahora es relativo en lugar de absoluto */
   bottom: 0;
   left: 0;
+  margin-top: auto; /* 🔹 Empuja el footer hacia abajo solo si hay espacio */
 }
 
 .footer p {
@@ -15,6 +16,7 @@
   margin: 0;
 }
 
+/* 🔥 Responsive Design */
 @media (max-width: 768px) {
   .footer {
     padding: var(--spacing-s);

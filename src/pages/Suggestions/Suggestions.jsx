@@ -1,5 +1,5 @@
 import { useState } from "react";
-import emailjs from "@emailjs/browser"; // Importamos EmailJS
+import emailjs from "@emailjs/browser"; // EmailJS for sending emails
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./Suggestions.css";
@@ -21,24 +21,24 @@ const Suggestions = () => {
 
     emailjs
       .send(
-        "service_c05fsft", // Reemplaza con tu Service ID
-        "template_xy7usoh", // Reemplaza con tu Template ID
+        "service_c05fsft", // Replace with your Service ID
+        "template_xy7usoh", // Replace with your Template ID
         formData,
-        "QQcGGblHx4Sgc--kC" // Reemplaza con tu Public Key
+        "QQcGGblHx4Sgc--kC" // Replace with your Public Key
       )
       .then(
         (response) => {
-          console.log("Mensaje enviado con éxito:", response);
-          toast.success("✅ ¡Mensaje enviado con éxito!", {
+          console.log("Message sent successfully:", response);
+          toast.success("✅ Message sent successfully!", {
             position: "top-center",
             autoClose: 3000,
             theme: "dark",
           });
-          setFormData({ name: "", email: "", message: "" }); // Reseteamos el formulario
+          setFormData({ name: "", email: "", message: "" }); // Reset form
         },
         (error) => {
-          console.error("Error al enviar el mensaje:", error);
-          toast.error("❌ Error al enviar el mensaje. Intenta de nuevo.", {
+          console.error("Error sending message:", error);
+          toast.error("❌ Error sending message. Please try again.", {
             position: "top-center",
             autoClose: 3000,
             theme: "dark",
@@ -49,12 +49,12 @@ const Suggestions = () => {
 
   return (
     <div className="suggestions-container">
-      <h1>💡 Envíanos tus sugerencias</h1>
-      <p>¿Tienes alguna idea para mejorar la app o los juegos? Déjanos tu mensaje.</p>
+      <h1>💡 Send Us Your Suggestions</h1>
+      <p>Do you have any ideas to improve the app or the games? Let us know!</p>
 
       <form className="suggestions-form" onSubmit={handleSubmit}>
         <label>
-          Nombre:
+          Name:
           <input
             type="text"
             name="name"
@@ -65,7 +65,7 @@ const Suggestions = () => {
         </label>
 
         <label>
-          Correo electrónico:
+          Email:
           <input
             type="email"
             name="email"
@@ -76,7 +76,7 @@ const Suggestions = () => {
         </label>
 
         <label>
-          Mensaje:
+          Message:
           <textarea
             name="message"
             value={formData.message}
@@ -85,7 +85,7 @@ const Suggestions = () => {
           />
         </label>
 
-        <button type="submit">Enviar Sugerencia</button>
+        <button type="submit">Send Suggestion</button>
       </form>
     </div>
   );

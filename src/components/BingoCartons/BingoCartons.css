@@ -1,46 +1,26 @@
 .bingo-cartons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+  gap: 30px;
   justify-content: center;
+  align-items: center;
   padding: 20px;
-  max-width: 90vw;
-  margin: 0 auto; /* Siempre centrado */
+  max-width: 100%;
+  margin: 0 auto;
 }
 
-/* 📌 CUANDO HAY 2 O 3 CARTONES: CENTRAR EN UNA FILA */
-@media (min-width: 768px) {
-  .bingo-cartons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-  }
-}
-
-/* 📌 CUANDO HAY 4 O MÁS CARTONES: USAR GRID EN UNA SOLA FILA */
-@media (min-width: 1024px) {
-  .bingo-cartons {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 15px;
-    justify-content: center;
-    align-items: center;
-  }
-}
-
-/* 🟣 CARTÓN DE BINGO CON ESTILO RETRO */
 .carton {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 5px;
-  padding: 12px;
-  border-radius: 10px;
+  gap: 8px;
+  padding: 15px;
+  border-radius: 12px;
   background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-  box-shadow: 0px 0px 8px rgba(255, 0, 127, 0.5), 0px 0px 15px rgba(0, 242, 255, 0.5);
-  border: 2px solid #ff007f;
+  box-shadow: 0px 0px 10px rgba(255, 0, 127, 0.8), 0px 0px 20px rgba(0, 242, 255, 0.8);
+  border: 3px solid #ff007f;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-width: 280px; 
+  max-width: 100%;
 }
 
 .carton:hover {
@@ -48,27 +28,25 @@
   box-shadow: 0px 0px 15px rgba(255, 0, 127, 1), 0px 0px 20px rgba(0, 242, 255, 1);
 }
 
-/* 🔤 ENCABEZADO DE CADA COLUMNA */
 .carton-column h3 {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #ffcc00;
   text-shadow: 0px 0px 10px rgba(255, 204, 0, 1);
   text-align: center;
-  margin-bottom: 3px;
+  margin-bottom: 5px;
 }
 
-/* 🎰 CASILLAS DE NÚMEROS */
 .carton-number {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: bold;
   color: #fff;
   background: linear-gradient(45deg, #333, #555);
   height: 50px;
   width: 70px;
-  border-radius: 5px;
+  border-radius: 6px;
   border: 2px solid #ff007f;
   text-shadow: 0px 0px 5px rgba(255, 0, 127, 0.8);
   transition: transform 0.2s ease-in-out, background 0.3s ease-in-out;
@@ -80,7 +58,6 @@
   box-shadow: 0px 0px 10px rgba(255, 0, 127, 1);
 }
 
-/* ❌ NÚMEROS MARCADOS */
 .carton-number.marked {
   background: linear-gradient(45deg, #00f2ff, #007fff);
   border: 2px solid #00f2ff;
@@ -90,29 +67,76 @@
   color: #000;
 }
 
-/* 🎮 ESTILO PARA COLUMNAS DEL CARTÓN */
 .carton-column {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
 }
 
-/* 🔹 AJUSTES PARA QUE EL TÍTULO NO SE SUPERPONGA */
-.game-title {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 15px;
-  padding: 10px 15px;
-  display: inline-block;
-  border-radius: 8px;
-  background: rgba(0, 0, 0, 0.5);
-  border: 2px solid #ff007f;
-  box-shadow: 0px 0px 10px rgba(255, 0, 127, 0.7);
+@media (max-width: 1200px) {
+  .bingo-cartons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .carton {
+    width: 45%;
+  }
+
+  .carton-number {
+    width: 65px;
+    height: 50px;
+    font-size: 1rem;
+  }
 }
 
-/* 📌 CUANDO HAY 4 CARTONES: AJUSTE PARA EL TÍTULO */
-@media (min-width: 1024px) {
-  .game-title {
-    margin-bottom: 25px;
+@media (max-width: 1024px) {
+  .bingo-cartons {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .carton {
+    width: 100%;
+    max-width: 380px;
+  }
+
+  .carton-number {
+    width: 60px;
+    height: 50px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .bingo-cartons {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: fit-content;
+  }
+
+  .carton {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .carton-number {
+    width: 55px;
+    height: 45px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carton {
+    width: 100%;
+  }
+
+  .carton-number {
+    width: 50px;
+    height: 40px;
+    font-size: 0.8rem;
   }
 }

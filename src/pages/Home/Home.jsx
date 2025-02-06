@@ -10,10 +10,10 @@ const games = [
 const Home = () => {
   return (
     <div className="home">
-      <h1>Available Games</h1>
+      <h1 className="home-title">Available Games</h1>
       <div className="game-list">
         {games.map((game) => (
-          <Link to={`/game/${game.name}`} key={game.name}>
+          <Link to={`/game/${game.name}`} key={game.name} className="game-link">
             <GameCard game={game} />
           </Link>
         ))}

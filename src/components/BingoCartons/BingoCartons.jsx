@@ -28,3 +28,4 @@ const BingoCartons = ({ cartons, markNumber }) => {
 };
 
 export default BingoCartons;
+

@@ -11,8 +11,16 @@ const Game = () => {
     <div className="game-container">
       <h1 className="game-title">{name}</h1>
       <div className="game-content">
-        {name === "Bingo" && <BingoGame />}
-        {name === "Tic Tac Toe" && <TicTacToeBoard />}
+        {name === "Bingo" && (
+          <div className="bingo-wrapper">
+            <BingoGame />
+          </div>
+        )}
+        {name === "Tic Tac Toe" && (
+          <div className="tictactoe-wrapper">
+            <TicTacToeBoard />
+          </div>
+        )}
       </div>
     </div>
   );

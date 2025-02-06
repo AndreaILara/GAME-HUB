@@ -55,21 +55,25 @@
 }
 
 html, body {
-  height: 100%;
+  height: auto;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  background-image: url('/Background.jpg'); /* Mantiene el fondo */
+  background-image: url('/Background.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  overflow-x: hidden; /* 🔹 Evita desbordamiento horizontal */
 }
 
 #root {
   flex: 1;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 a {
   text-decoration: none;

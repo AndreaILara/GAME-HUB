@@ -1,23 +1,65 @@
 .home {
   text-align: center;
   padding: var(--spacing-l);
-  flex-grow: 1;
+  min-height: 100vh; /* 🔹 Evita que el footer se solape */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: var(--spacing-l);
 }
 
-.home h1 {
+.home-title {
   font-size: var(--font-size-xl);
-  margin-bottom: var(--spacing-l);
+  margin-bottom: var(--spacing-m);
+  text-shadow: 0px 0px 10px var(--color-accent-1), 0px 0px 20px var(--color-accent-2);
 }
 
+/* 🔹 Se usa grid en lugar de flex para controlar mejor la disposición */
 .game-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: var(--spacing-m);
   width: 100%;
-  max-width: 1200px;
+  max-width: 900px;
+  justify-items: center;
+  padding: var(--spacing-m);
+}
+
+.game-link {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* 🔥 Responsive Design */
+@media (max-width: 768px) {
+  .home {
+    padding: var(--spacing-m);
+  }
+
+  .home-title {
+    font-size: var(--font-size-lg);
+  }
+
+  .game-list {
+    grid-template-columns: 1fr; /* 🔹 Solo un juego por fila en pantallas pequeñas */
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home {
+    padding: var(--spacing-s);
+  }
+
+  .home-title {
+    font-size: var(--font-size-md);
+  }
+
+  .game-list {
+    max-width: 100%;
+  }
 }

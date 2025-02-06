@@ -3,42 +3,95 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  height: 100vh; /* Mantiene todo dentro del viewport */
-  width: 100vw;
+  min-height: 100vh; /* 🔹 Permite crecer dinámicamente */
+  width: 100%;
   text-align: center;
-  padding: 0;
-  margin: 0;
-  overflow: hidden; /* Evita scroll innecesario */
-  position: relative; /* Asegura que el contenido se ajuste */
+  padding: var(--spacing-m) 0;
+  position: relative;
 }
 
 .game-title {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-family: "Press Start 2P", cursive;
   text-transform: uppercase;
   color: var(--color-light);
   text-shadow: 0 0 8px var(--color-accent-1), 0 0 16px var(--color-accent-2);
-  margin: 0;
   padding: 10px 20px;
   border-radius: var(--border-radius-m);
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   border: 2px solid var(--color-accent-3);
   box-shadow: 0 0 10px var(--color-accent-2);
   animation: neon-glow 1.5s infinite alternate;
-  position: absolute;
-  top: 80px; /* Asegura que no se solape con el navbar */
+  margin-bottom: var(--spacing-m);
 }
 
-.game-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  flex-grow: 1; /* Ocupa todo el espacio restante */
+/* ✅ Contenedores separados para evitar conflictos */
+.bingo-wrapper,
+.tictactoe-wrapper {
   width: 100%;
-  height: calc(100vh - 100px); /* Ajuste para que no sobrepase el viewport */
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-m);
 }
 
+/* 🎮 Ajuste de los juegos */
+.bingo-game,
+.tic-tac-toe-container {
+  max-width: 90%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-s);
+  padding-bottom: var(--spacing-m);
+}
+
+/* 🔥 Responsive design */
+@media (max-width: 1024px) {
+  .game-title {
+    font-size: 1.5rem;
+  }
+
+  .game-content {
+    padding: var(--spacing-s);
+  }
+
+  .bingo-wrapper,
+  .tictactoe-wrapper {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .game-title {
+    font-size: 1.3rem;
+  }
+
+  .bingo-game,
+  .tic-tac-toe-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-title {
+    font-size: 1.2rem;
+  }
+
+  .game-container {
+    padding: var(--spacing-xs);
+  }
+
+  .bingo-game,
+  .tic-tac-toe-container {
+    max-width: 100%;
+  }
+}
+
+/* Animación del título */
 @keyframes neon-glow {
   from {
     text-shadow: 0 0 8px var(--color-accent-1), 0 0 16px var(--color-accent-2);
@@ -46,12 +99,4 @@
   to {
     text-shadow: 0 0 16px var(--color-accent-3), 0 0 24px var(--color-accent-4);
   }
-}
-
-/* Ajuste global */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden; /* Evita la barra de scroll */
 }
