@@ -83,6 +83,32 @@
   text-shadow: 0px 0px 5px var(--color-accent-2);
   animation: fadeInOut 2s ease-in-out;
 }
+/* 🎮 TOAST DE AGREGAR A FAVORITOS (Azul Eléctrico) */
+.toast-favorite-add {
+  font-family: "Press Start 2P", cursive;
+  font-size: 1rem; /* 🔹 Letra más pequeña */
+  background: linear-gradient(45deg, #007bff, #00c3ff); /* 🔹 Azul Eléctrico */
+  color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  text-shadow: 0px 0px 6px rgba(0, 195, 255, 1);
+  box-shadow: 0px 0px 10px rgba(0, 195, 255, 0.8);
+  animation: glowEffect 1.5s infinite alternate;
+}
+
+/* ❌ TOAST DE ELIMINAR FAVORITOS (Naranja Intenso) */
+.toast-favorite-remove {
+  font-family: "Press Start 2P", cursive;
+  font-size: 1rem;
+  background: linear-gradient(45deg, #ff8c00, #ff4500); /* 🔹 Naranja Intenso */
+  color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  text-shadow: 0px 0px 6px rgba(255, 69, 0, 1);
+  box-shadow: 0px 0px 10px rgba(255, 69, 0, 0.8);
+  animation: glowEffect 1.5s infinite alternate;
+}
+
 
 @keyframes fadeInOut {
   0%, 100% {
@@ -90,5 +116,14 @@
   }
   50% {
     opacity: 1;
+  }
+}
+/* ✨ ANIMACIÓN DE EFECTO NEÓN */
+@keyframes pulse-glow {
+  from {
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+  }
+  to {
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 1);
   }
 }

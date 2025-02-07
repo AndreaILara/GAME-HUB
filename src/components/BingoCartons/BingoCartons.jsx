@@ -6,7 +6,6 @@ const BingoCartons = ({ cartons, markNumber }) => {
     <div className="bingo-cartons">
       {cartons.map((carton, cartonIndex) => (
         <div key={cartonIndex} className="carton">
-          {/* Renderizar las columnas */}
           {Object.keys(carton).map((column) => (
             <div key={column} className="carton-column">
               <h3>{column}</h3>

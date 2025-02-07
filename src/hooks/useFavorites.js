@@ -9,16 +9,20 @@ const useFavorites = () => {
     return { favorites: [], addFavorite: () => { }, removeFavorite: () => { } };
   }
 
+  const addFavorite = (game) => {
+    if (!state.favorites.some((fav) => fav.name === game.name)) {
+      dispatch({ type: "ADD_FAVORITE", payload: game });
+    }
+  };
+
+  const removeFavorite = (gameName) => {
+    dispatch({ type: "REMOVE_FAVORITE", payload: gameName });
+  };
+
   return {
     favorites: state.favorites || [],
-    addFavorite: (name) => {
-      console.log(`Añadiendo a favoritos: ${name}`);
-      dispatch({ type: "ADD_FAVORITE", payload: name });
-    },
-    removeFavorite: (name) => {
-      console.log(`Eliminando de favoritos: ${name}`);
-      dispatch({ type: "REMOVE_FAVORITE", payload: name });
-    },
+    addFavorite,
+    removeFavorite,
   };
 };
 

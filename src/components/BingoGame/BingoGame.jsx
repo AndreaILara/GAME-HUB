@@ -134,8 +134,9 @@ const BingoGame = () => {
       ) {
         toast.success(`🏆 BINGO on card ${cartonIndex + 1}! 🏆`, {
           autoClose: 3000,
-          className: "bingo-toast",
+          className: "bingo-toast", // 🔥 Se aplica la nueva clase
           closeOnClick: true,
+          position: "top-center", // Centrado en pantalla
         });
         newCompletedLines[cartonIndex].bingo = true;
         gameWon = true;
@@ -176,17 +177,28 @@ const BingoGame = () => {
 
   return (
     <div className={`bingo-game ${gameStarted ? "started" : ""}`}>
-      <ToastContainer />
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        toastClassName="bingo-toast"
+      />
       {showRestartScreen ? (
         <div className="restart-screen">
-            <img src="/restart.png" alt="Restarting" className="restart-icon" />
-            <h1>Restarting...</h1>
+          <img src="/restart.png" alt="Restarting" className="restart-icon" />
+          <h1>Restarting...</h1>
         </div>
       ) : (
         <>
           {!gameStarted ? (
             <div className="carton-selection">
-              <p>Choose the number of cartons:</p>
+              <p>Choose the number of cards:</p>
               <div className="carton-buttons">
                 {[2, 3, 4].map((num) => (
                   <button
@@ -194,7 +206,7 @@ const BingoGame = () => {
                     className={numCartons === num ? "selected" : ""}
                     onClick={() => setNumCartons(num)}
                   >
-                    {num} Cartons
+                    {num} Cards
                   </button>
                 ))}
               </div>

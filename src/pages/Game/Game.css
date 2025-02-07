@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   min-height: 100vh; /* 🔹 Permite crecer dinámicamente */
   width: 100%;
   text-align: center;
@@ -23,6 +23,7 @@
   box-shadow: 0 0 10px var(--color-accent-2);
   animation: neon-glow 1.5s infinite alternate;
   margin-bottom: var(--spacing-m);
+  margin-top: var(--spacing-xl);
 }
 
 /* ✅ Contenedores separados para evitar conflictos */

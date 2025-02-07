@@ -6,7 +6,7 @@ import "./GameCard.css";
 
 const GameCard = ({ game }) => {
   const { favorites, addFavorite, removeFavorite } = useFavorites();
-  const isFavorite = favorites.includes(game.name);
+  const isFavorite = favorites.some((fav) => fav.name === game.name);
   const [rating, setRating] = useState(0);
 
   const handleRating = (newRating, e) => {
@@ -30,14 +30,16 @@ const GameCard = ({ game }) => {
       toast.info(`❌ "${game.name}" removed from favorites!`, {
         position: "top-center",
         autoClose: 2000,
-        theme: "dark",
+        className: "toast-favorite-remove",
+        closeOnClick: true,
       });
     } else {
-      addFavorite(game.name);
+      addFavorite(game);
       toast.success(`💖 "${game.name}" added to favorites!`, {
         position: "top-center",
         autoClose: 2000,
-        theme: "dark",
+        className: "toast-favorite-add",
+        closeOnClick: true,
       });
     }
   };

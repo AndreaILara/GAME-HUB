@@ -5,8 +5,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   position: relative;
   min-height: 100vh;
+  max-width: 95vw;
+  margin: 0 auto;
 }
 
 /* 🔄 Pantalla de Reinicio - Ocupa todo el viewport */
@@ -40,39 +43,34 @@
   animation: spin 1.5s linear infinite;
 }
 
-/* 🎮 Botón de Auto Mode */
 .auto-mode-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 15px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
 }
-
 .auto-mode-button {
-  font-size: 1rem;
-  padding: 12px 20px;
-  border-radius: 12px;
-  border: 3px solid var(--color-light);
+  font-size: 0.5rem; /* 🔹 Reducimos tamaño */
+  padding: 8px 15px; /* 🔹 Más compacto */
+  border-radius: 8px;
   font-weight: bold;
   text-transform: uppercase;
-  box-shadow: 0px 0px 15px var(--color-accent-1);
-  transition: background 0.3s, box-shadow 0.3s;
+  box-shadow: 0px 0px 12px var(--color-accent-1);
   cursor: pointer;
 }
 
 .auto-mode-button.active {
   background: linear-gradient(90deg, #00ff00, #00aa00);
   color: black;
-  border: 3px solid #00ff00;
-  box-shadow: 0px 0px 25px rgba(0, 255, 0, 1);
+  border: 2px solid #00ff00;
 }
 
 .auto-mode-button.inactive {
   background: linear-gradient(90deg, #ff0000, #aa0000);
   color: white;
-  border: 3px solid #ff0000;
-  box-shadow: 0px 0px 25px rgba(255, 0, 0, 1);
+  border: 2px solid #ff0000;
 }
+
 
 .auto-mode-button:hover {
   transform: scale(1.05);
@@ -126,27 +124,17 @@
   box-shadow: 0px 0px 25px var(--color-accent-4);
 }
 
-/* 🚀 TOASTS ESTILO NEÓN MEJORADOS */
-.toast-container {
+/* 🔥 TOASTS ESTILO NEÓN */
+.bingo-toast {
   font-family: "Press Start 2P", cursive;
   padding: 20px;
   border-radius: 12px;
   font-size: 1rem;
   background: rgba(0, 0, 0, 0.85);
   border: 3px solid #ff007f;
+  color: white;
+  text-shadow: 0px 0px 10px var(--color-accent-3);
   box-shadow: 0px 0px 15px rgba(255, 0, 127, 0.8);
-}
-
-/* 🎆 TOAST BINGO */
-.toast-bingo {
-  font-size: 1.3rem;
-  font-weight: bold;
-  background: rgba(255, 204, 0, 0.9);
-  color: #000;
-  border: 3px solid #ffcc00;
-  text-shadow: 0px 0px 10px #ff007f;
-  padding: 25px;
-  border-radius: 15px;
 }
 
 /* 🎮 Botones de Draw Number y Restart con espacio */
@@ -236,7 +224,10 @@
   .bingo-controls {
     flex-direction: column;
   }
-
+  .auto-mode-container {
+    top: 10px;
+    right: 10px;
+  }
   .draw-button,
   .reset-button {
     width: 100%;
@@ -247,4 +238,4 @@
     min-height: 80px;
     font-size: 2.5rem;
   }
-}
+} 

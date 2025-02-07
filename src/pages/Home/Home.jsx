@@ -4,7 +4,7 @@ import "./Home.css";
 
 const games = [
   { name: "Tic Tac Toe", description: "A classic game of Xs and Os" },
-  { name: "Bingo", description: "Mark the numbers and complete a line!" },
+  { name: "Bingo", description: "Mark the numbers on the card before anyone else!" },
 ];
 
 const Home = () => {

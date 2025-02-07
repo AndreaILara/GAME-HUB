@@ -5,10 +5,10 @@
   color: var(--color-light);
   text-align: center;
   box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.1);
-  position: relative; /* 🔹 Ahora es relativo en lugar de absoluto */
+  position: sticky; /* 🔥 Ahora el footer se queda pegado abajo */
   bottom: 0;
   left: 0;
-  margin-top: auto; /* 🔹 Empuja el footer hacia abajo solo si hay espacio */
+  margin-top: auto; /* 🔥 Se empuja hacia abajo solo si hay espacio */
 }
 
 .footer p {

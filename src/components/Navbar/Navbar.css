@@ -5,11 +5,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: sticky;
+  position: fixed; /* 🔥 Cambia sticky a fixed */
   top: 0;
+  left: 0;
   z-index: 1000;
+  height: 60px; /* 🔥 Ajusta la altura exacta */
 }
-
+main {
+  padding-top: 70px; /* 🔥 Ajustar según la altura del navbar */
+}
 /* 🔥 Botón menú hamburguesa */
 .menu-button {
   background: none;
@@ -75,6 +79,13 @@
 
 /* 🖥️ Diseño responsive */
 @media (max-width: 768px) {
+  .navbar {
+    height: 70px; /* 🔹 Ajuste en móviles */
+  }
+  main {
+    padding-top: 60px; /* 🔥 Se ajusta en móviles */
+  }
+  
   .menu-button {
     display: block; /* 🔹 Se muestra en móviles */
   }

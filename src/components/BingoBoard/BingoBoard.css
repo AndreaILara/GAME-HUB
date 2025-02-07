@@ -1,11 +1,26 @@
+.bingo-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten */
+  justify-content: center; /* Centra los tableros */
+  align-items: center; /* Centra verticalmente */
+  gap: 20px; /* Espaciado entre los cartones */
+  width: 100%;
+  max-width: 1200px; /* Evita que se expandan demasiado en pantallas grandes */
+  margin: 0 auto;
+}
+
 .bingo-board {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 10px;
   justify-content: center;
+  align-items: center;
   background-color: #282c34;
   padding: 20px;
   border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .bingo-column {

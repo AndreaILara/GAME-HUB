@@ -1,5 +1,5 @@
 import { useState } from "react";
-import emailjs from "@emailjs/browser"; // EmailJS for sending emails
+import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./Suggestions.css";
@@ -21,10 +21,10 @@ const Suggestions = () => {
 
     emailjs
       .send(
-        "service_c05fsft", // Replace with your Service ID
-        "template_xy7usoh", // Replace with your Template ID
+        import.meta.env.VITE_EMAILJS_SERVICE_ID, // 📌 Se obtiene del .env
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID, // 📌 Se obtiene del .env
         formData,
-        "QQcGGblHx4Sgc--kC" // Replace with your Public Key
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY // 📌 Se obtiene del .env
       )
       .then(
         (response) => {
